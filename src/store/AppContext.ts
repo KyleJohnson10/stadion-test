@@ -102,15 +102,6 @@ export const DefaultState: IState = {
       type: "video",
       categoryUrl: "https://www.quins.co.uk/",
     },
-    {
-      title: "Epicurus in armatum hostem impetum fecisse",
-      url: "https://www.google.co.uk",
-      date: "24 Nov 2021",
-      featuredImage: "https://picsum.photos/500",
-      category: "mens",
-      type: "article",
-      categoryUrl: "https://www.quins.co.uk/",
-    },
   ],
 }
 

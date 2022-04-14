@@ -12,6 +12,15 @@ export interface ICard {
   categoryUrl?: string;
 }
 
+export interface IPromo {
+  title: string;
+  label?: string;
+  backgroundImage: string;
+  featuredImage: string;
+  buttonLink?: string;
+  buttonText?: string;
+}
+
 export interface IAppContext {
   state: IState;
 }

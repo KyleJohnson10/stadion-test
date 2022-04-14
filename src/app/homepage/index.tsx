@@ -5,15 +5,23 @@ import { Container, Row, Col } from 'styled-bootstrap-grid';
 import { FeaturedCard } from '../../components/featuredCard';
 import { ArticleCard } from '../../components/articleCard';
 import { AppContext } from '../../store/AppContext';
+import { PromoCard } from '../../components/promo';
 
 export const BodyContainer = styled(Container)`
   @media (min-width: 1252px) {
     max-width: 1252px;
   }
+  @media (max-width: 767px) {
+    padding: 0;
+  }
 `;
 
 export const StyledRow = styled(Row)`
   margin: 0 -15px;
+
+  @media (max-width: 767px) {
+    margin 0;
+  }
 `;
 
 export const StyledColumn = styled(Col)`
@@ -89,6 +97,16 @@ export const Homepage: FunctionComponent<RouteComponentProps> = () => {
               />
             </StyledColumn>
           ))}
+          <StyledColumn md={4}>
+              <PromoCard
+                title="OFFICIAL HOME KIT"
+                backgroundImage="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/promo-background.svg"
+                featuredImage="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/shirt-promo.png"
+                label="AVAILABLE NOW"
+                buttonText="SHOP NOW"
+                buttonLink="https://www.quins.co.uk/"
+              />
+            </StyledColumn>
         </StyledRow>
         <IndicatorContainer>
           <Indicator>
