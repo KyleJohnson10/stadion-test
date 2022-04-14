@@ -91,7 +91,7 @@ export const FeaturedCard: FunctionComponent<ICard> = (props: ICard) => {
                 {type === 'video' && (
                   <img
                     alt="icon"
-                    src="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/video-icon-no-bg.png"></img>
+                    src="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/video-icon-black.svg"></img>
                 )}
               </BottomContent>
             </ColumnContent>
