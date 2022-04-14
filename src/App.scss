@@ -1,0 +1,36 @@
+* {
+  font-family: 'Helvetica Neue';
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 47px;
+
+  @media (max-width: 991px) and (min-width: 768px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+
+  @media (max-width: 370px) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+
+h2 {
+  font-size: 27px;
+  line-height: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+h3 {
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 800;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
