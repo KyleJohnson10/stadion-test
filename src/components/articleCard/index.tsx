@@ -32,7 +32,7 @@ const TopContent = styled.div<{ type: string | undefined }>`
     width: 63px;
   }
 
-  .panelImage {
+  .panel__image {
     width: 100%;
   }
 `;
@@ -73,7 +73,7 @@ export const ArticleCard: FunctionComponent<ICard> = (props: ICard) => {
               alt="icon"
               src="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/gallery-icon.svg"></img>
           ) : (
-            <img className="panelImage" alt="icon" src={featuredImage}></img>
+            <img className="panel__image" alt="icon" src={featuredImage}></img>
           )}
         </TopContent>
         <BottomContent type={type}>

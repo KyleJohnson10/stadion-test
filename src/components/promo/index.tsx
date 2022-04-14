@@ -29,7 +29,7 @@ const TopContent = styled.div`
     width: 63px;
   }
 
-  .panelImage {
+  .panel__image {
     width: 90%;
   }
 `;
@@ -63,12 +63,12 @@ export const PromoCard: FunctionComponent<IPromo> = (props: IPromo) => {
         }}
         featuredImage={backgroundImage || ''}>
         <TopContent>
-          <img className="panelImage" alt="icon" src={featuredImage}></img>
+          <img className="panel__image" alt="icon" src={featuredImage}></img>
         </TopContent>
         <BottomContent>
           <h3 style={{ marginBottom: '8px' }}>{label}</h3>
           <h3
-            className="promo-text"
+            className="promo__text"
             style={{ color: '#fff', marginBottom: '16px' }}>
             {title}
           </h3>
