@@ -9,4 +9,13 @@ export interface ICard {
   featuredImage: string;
   category?: Category;
   type?: Type;
+  categoryUrl?: string;
+}
+
+export interface IAppContext {
+  state: IState;
+}
+
+export interface IState {
+  cards?: ICard[];
 }

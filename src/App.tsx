@@ -1,12 +1,15 @@
-import React from 'react';
 import './App.scss';
 import { AppRouter } from './app/router';
+import { AppContext, DefaultState } from './store/AppContext';
 
 function App() {
   return (
-    <div>
-      <AppRouter />
-    </div>
+    <AppContext.Provider
+        value={{
+          state: DefaultState,
+        }}>
+        <AppRouter />
+      </AppContext.Provider>
   );
 }
 

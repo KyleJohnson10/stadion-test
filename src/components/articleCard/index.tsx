@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { Tag } from '../tag';
 import { ICard } from '../../store/interfaces';
 
+const ArticleContainer = styled.div`
+  padding: 0 15px;
+`;
+
 const ColumnContent = styled.div<{ featuredImage: string }>`
   min-height: 606px;
   background-repeat: no-repeat;
@@ -15,6 +19,7 @@ const ColumnContent = styled.div<{ featuredImage: string }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 `;
 
 const TopContent = styled.div<{ type: string | undefined }>`
@@ -43,43 +48,52 @@ const BottomContent = styled.div<{ type: string | undefined }>`
 `;
 
 export const ArticleCard: FunctionComponent<ICard> = (props: ICard) => {
-  const { title, featuredImage, category, date, url, type } = props;
+  const { title, featuredImage, category, date, url, type, categoryUrl } = props;
 
   return (
-    <ColumnContent
-      featuredImage={
-        type === 'gallery' || type === 'video' ? featuredImage : ''
-      }>
-      <TopContent type={type}>
-        {type === 'video' ? (
-          <img
-            className="icon"
-            alt="icon"
-            src="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/video-icon.svg"></img>
-        ) : type === 'gallery' ? (
-          <img
-            className="icon"
-            alt="icon"
-            src="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/gallery-icon.svg"></img>
-        ) : (
-          <img className="panelImage" alt="icon" src={featuredImage}></img>
-        )}
-      </TopContent>
-      <BottomContent type={type}>
-        <Tag category={category} />
-        <h3
-          style={
-            type === 'gallery' || type === 'video' ? { color: '#fff' } : {}
-          }>
-          {title}
-        </h3>
-        <h3
-          style={
-            type === 'gallery' || type === 'video' ? { color: '#fff' } : {}
-          }>
-          {date}
-        </h3>
-      </BottomContent>
-    </ColumnContent>
+    <ArticleContainer>
+      <ColumnContent
+        onClick={(): void => {
+          if (url) {
+            window.open(url, '_blank');
+          }
+        }}
+        featuredImage={
+          type === 'gallery' || type === 'video' ? featuredImage : ''
+        }>
+        <TopContent type={type}>
+          {type === 'video' ? (
+            <img
+              className="icon"
+              alt="icon"
+              src="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/video-icon.svg"></img>
+          ) : type === 'gallery' ? (
+            <img
+              className="icon"
+              alt="icon"
+              src="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/gallery-icon.svg"></img>
+          ) : (
+            <img className="panelImage" alt="icon" src={featuredImage}></img>
+          )}
+        </TopContent>
+        <BottomContent type={type}>
+          <Tag categoryUrl={categoryUrl} category={category} />
+          <h3
+            style={
+              type === 'gallery' || type === 'video' ? { color: '#fff' } : {}
+            }>
+            {title}
+          </h3>
+          <h3
+            style={
+              type === 'gallery' || type === 'video'
+                ? { color: '#fff' }
+                : { opacity: '0.6' }
+            }>
+            {date}
+          </h3>
+        </BottomContent>
+      </ColumnContent>
+    </ArticleContainer>
   );
 };
