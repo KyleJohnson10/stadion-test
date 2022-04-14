@@ -85,7 +85,7 @@ export const Homepage: FunctionComponent<RouteComponentProps> = () => {
       <BodyContainer>
         <StyledRow>
           {cards?.map((card, i) => (
-            <StyledColumn md={4}>
+            <StyledColumn md={6} lg={4}>
               <ArticleCard
                 title={card.title}
                 category={card.category}
@@ -97,7 +97,7 @@ export const Homepage: FunctionComponent<RouteComponentProps> = () => {
               />
             </StyledColumn>
           ))}
-          <StyledColumn md={4}>
+          <StyledColumn md={6} lg={4}>
               <PromoCard
                 title="OFFICIAL HOME KIT"
                 backgroundImage="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/promo-background.svg"
