@@ -102,6 +102,16 @@ export const DefaultState: IState = {
       type: "video",
       categoryUrl: "https://www.quins.co.uk/",
     },
+    {
+      title: "OFFICIAL HOME KIT",
+      url: "https://www.google.co.uk",
+      backgroundImage: "https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/promo-background.svg",
+      featuredImage: "https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/shirt-promo.png",
+      type: "promo",
+      label: "AVAILABLE NOW",
+      buttonText: "SHOP NOW",
+      buttonLink: "https://www.quins.co.uk/"
+    },
   ],
 }
 

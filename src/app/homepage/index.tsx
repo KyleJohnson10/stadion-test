@@ -86,27 +86,30 @@ export const Homepage: FunctionComponent<RouteComponentProps> = () => {
         <StyledRow>
           {cards?.map((card, i) => (
             <StyledColumn md={6} lg={4}>
-              <ArticleCard
-                title={card.title}
-                category={card.category}
-                featuredImage={card.featuredImage}
-                date={card.date}
-                type={card.type}
-                url={card.url}
-                categoryUrl={card.categoryUrl}
-              />
+              {card.type === 'promo' ? (
+                <PromoCard
+                  key={i}
+                  title={card.title}
+                  backgroundImage={card.backgroundImage}
+                  featuredImage={card.featuredImage}
+                  label={card.label}
+                  buttonText={card.buttonText}
+                  buttonLink={card.buttonLink}
+                />
+              ) : (
+                <ArticleCard
+                  key={i}
+                  title={card.title}
+                  category={card.category}
+                  featuredImage={card.featuredImage}
+                  date={card.date}
+                  type={card.type}
+                  url={card.url}
+                  categoryUrl={card.categoryUrl}
+                />
+              )}
             </StyledColumn>
           ))}
-          <StyledColumn md={6} lg={4}>
-              <PromoCard
-                title="OFFICIAL HOME KIT"
-                backgroundImage="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/promo-background.svg"
-                featuredImage="https://jktechproductions.s3.eu-west-2.amazonaws.com/kyle/shirt-promo.png"
-                label="AVAILABLE NOW"
-                buttonText="SHOP NOW"
-                buttonLink="https://www.quins.co.uk/"
-              />
-            </StyledColumn>
         </StyledRow>
         <IndicatorContainer>
           <Indicator>

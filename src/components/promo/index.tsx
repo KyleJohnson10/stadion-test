@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { IPromo } from '../../store/interfaces';
+import { ICard } from '../../store/interfaces';
 
 const ArticleContainer = styled.div`
   padding: 0 15px;
@@ -43,7 +43,7 @@ const BottomContent = styled.div`
   text-align: center;
 `;
 
-export const PromoCard: FunctionComponent<IPromo> = (props: IPromo) => {
+export const PromoCard: FunctionComponent<ICard> = (props: ICard) => {
   const {
     title,
     featuredImage,
